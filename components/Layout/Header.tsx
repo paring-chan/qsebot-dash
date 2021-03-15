@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navbar, NavbarBrand } from 'react-bootstrap-v5';
+import React from 'react'
+import { Navbar, NavbarBrand } from 'react-bootstrap-v5'
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <NavbarBrand>큐새</NavbarBrand>
       </div>
     </Navbar>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
