@@ -1,7 +1,7 @@
 import React from 'react'
 import PageContent from '@components/PageContent'
 import { NextPage, NextPageContext } from 'next'
-import { Alert, Card } from 'react-bootstrap-v5'
+import { Alert, Card, Form } from 'react-bootstrap-v5'
 
 const Login: NextPage<any> = ({ query }) => {
   return (
@@ -14,6 +14,12 @@ const Login: NextPage<any> = ({ query }) => {
               현재 존재하는 유저가 없습니다. 유저를 생성해주세요.
             </Alert>
           )}
+          <Form>
+            <Form.Group controlId="loginFormID">
+              <Form.Label>ID</Form.Label>
+              <Form.Control required />
+            </Form.Group>
+          </Form>
         </Card.Body>
       </Card>
     </PageContent>
