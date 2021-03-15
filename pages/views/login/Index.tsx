@@ -6,7 +6,7 @@ import { Alert, Card } from 'react-bootstrap-v5'
 const Login: NextPage<any> = ({ query }) => {
   return (
     <PageContent>
-      <Card>
+      <Card className="col-sm-12 col-md-6 col-lg-4">
         <Card.Body>
           {query.firstRun && (
             <Alert variant="primary">
