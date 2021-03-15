@@ -10,6 +10,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "noEmit": false
   },
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"],
   "include": ["src"]
