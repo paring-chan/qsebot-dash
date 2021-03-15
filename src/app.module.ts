@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { RenderModule } from 'nest-next'
+import { AuthModule } from './auth/auth.module';
 import Next from 'next'
 
 @Module({
@@ -9,6 +10,7 @@ import Next from 'next'
     RenderModule.forRootAsync(
       Next({ dev: process.env.NODE_ENV !== 'production' }),
     ),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
