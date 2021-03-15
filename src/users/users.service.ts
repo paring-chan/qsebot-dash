@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import knex from '@utils/knex'
 
-type User = {
+export type User = {
   id: string
   password: string
 }
