@@ -10,5 +10,7 @@ export class AuthService {
     const user = await this.usersService.getUser(id)
     if (!user) return null
     const compared = await bcrypt.compare(user.password, password)
+    if (!compared) return
+    return user
   }
 }
