@@ -19,6 +19,10 @@ const Login: NextPage<any> = ({ query }) => {
               <Form.Label>ID</Form.Label>
               <Form.Control required />
             </Form.Group>
+            <Form.Group controlId="loginFormPW" style={{ marginTop: 10 }}>
+              <Form.Label>비밀번호</Form.Label>
+              <Form.Control required type="password" />
+            </Form.Group>
           </Form>
         </Card.Body>
       </Card>
