@@ -1,7 +1,8 @@
 import React from 'react'
+import PageContent from '@components/PageContent'
 
 const Index = () => {
-  return <div>Home</div>
+  return <PageContent>Home</PageContent>
 }
 
 export default Index
