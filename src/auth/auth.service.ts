@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common'
 import { User, UsersService } from '../users/users.service'
 import bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt'
-import knex from '@utils/knex'
 
 @Injectable()
 export class AuthService {
@@ -12,20 +11,9 @@ export class AuthService {
   ) {}
 
   async validateUser(id: string, password: string): Promise<any> {
-    let user = await this.usersService.getUser(id)
-    if (!(await knex('users').limit(1))[0]) {
-      const pw = await bcrypt.hash(password, 10)
-      await knex('users').insert({
-        password: pw,
-        id,
-      })
-      user = {
-        id,
-        password: pw,
-      }
-    }
+    const user = await this.usersService.getUser(id)
     if (!user) return null
-    const compared = await bcrypt.compare(user.password, password)
+    const compared = await bcrypt.compare(password, user.password)
     if (!compared) return
     return user
   }

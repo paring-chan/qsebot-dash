@@ -12,14 +12,14 @@ const Login: NextPage<any> = ({ query }) => {
           {query.firstRun && (
             <Alert variant="primary">관리자 계정을 생성해주세요</Alert>
           )}
-          <Form>
+          <form action="/auth/login" method="post">
             <Form.Group controlId="loginFormID">
               <Form.Label>ID</Form.Label>
-              <Form.Control required />
+              <Form.Control name="id" required />
             </Form.Group>
             <Form.Group controlId="loginFormPW" style={{ marginTop: 10 }}>
               <Form.Label>비밀번호</Form.Label>
-              <Form.Control required type="password" />
+              <Form.Control name="password" required type="password" />
             </Form.Group>
             <Button
               type="submit"
@@ -30,7 +30,7 @@ const Login: NextPage<any> = ({ query }) => {
             >
               {query.firstRun ? '계정 생성' : '로그인'}
             </Button>
-          </Form>
+          </form>
         </Card.Body>
       </Card>
     </PageContent>
