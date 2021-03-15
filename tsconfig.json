@@ -22,7 +22,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "exclude": ["node_modules", "dist"],
