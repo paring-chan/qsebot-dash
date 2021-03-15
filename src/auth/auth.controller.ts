@@ -11,6 +11,7 @@ import { AuthGuard } from '@nestjs/passport'
 import { Request, Response } from 'express'
 import { AuthService } from './auth.service'
 import { User } from '../users/users.service'
+import knex from '@utils/knex'
 
 @Controller('auth')
 export class AuthController {
@@ -25,6 +26,8 @@ export class AuthController {
   @Get('login')
   @Render('login/Index')
   async loginRender() {
+    const userExists = (await knex('users').limit(1))[0]
+    console.log(userExists)
     return {}
   }
 }
