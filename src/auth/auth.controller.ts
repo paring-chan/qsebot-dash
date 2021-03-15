@@ -26,7 +26,7 @@ export class AuthController {
   @Get('login')
   @Render('login/Index')
   async loginRender() {
-    const userExists = (await knex('users').limit(1))[0]
+    const userExists = !!(await knex('users').limit(1))[0]
     console.log(userExists)
     return {}
   }
