@@ -10,9 +10,7 @@ const Login: NextPage<any> = ({ query }) => {
         <Card.Body>
           <Card.Title>{query.firstRun ? '계정 생성' : '로그인'}</Card.Title>
           {query.firstRun && (
-            <Alert variant="primary">
-              현재 존재하는 유저가 없습니다. 유저를 생성해주세요.
-            </Alert>
+            <Alert variant="primary">관리자 계정을 생성해주세요</Alert>
           )}
           <Form>
             <Form.Group controlId="loginFormID">
