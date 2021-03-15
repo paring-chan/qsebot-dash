@@ -1,6 +1,7 @@
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
 import Layout from '@components/Layout';
+import 'bootstrap/scss/bootstrap.scss';
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
