@@ -6,7 +6,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext",
+      "esnext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -24,6 +24,10 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"]
+    }
   },
   "exclude": [
     "node_modules",
