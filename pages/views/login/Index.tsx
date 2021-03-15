@@ -1,7 +1,7 @@
 import React from 'react'
 import PageContent from '@components/PageContent'
 import { NextPage, NextPageContext } from 'next'
-import { Alert, Card, Form } from 'react-bootstrap-v5'
+import { Alert, Button, Card, Form } from 'react-bootstrap-v5'
 
 const Login: NextPage<any> = ({ query }) => {
   return (
@@ -23,6 +23,15 @@ const Login: NextPage<any> = ({ query }) => {
               <Form.Label>비밀번호</Form.Label>
               <Form.Control required type="password" />
             </Form.Group>
+            <Button
+              type="submit"
+              style={{
+                marginTop: 10,
+                width: '100%',
+              }}
+            >
+              {query.firstRun ? '계정 생성' : '로그인'}
+            </Button>
           </Form>
         </Card.Body>
       </Card>
