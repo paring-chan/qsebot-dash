@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common'
+import knex from '@utils/knex'
 
 type User = {
   id: string
@@ -6,4 +7,8 @@ type User = {
 }
 
 @Injectable()
-export class UsersService {}
+export class UsersService {
+  async getUser(id: string): Promise<User | undefined> {
+    return (await knex('users').limit(1).where({ id }))[0]
+  }
+}
