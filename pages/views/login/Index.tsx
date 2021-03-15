@@ -8,6 +8,7 @@ const Login: NextPage<any> = ({ query }) => {
     <PageContent>
       <Card className="col-sm-12 col-md-6 col-lg-4 mx-auto">
         <Card.Body>
+          <Card.Title>{query.firstRun ? '계정 생성' : '로그인'}</Card.Title>
           {query.firstRun && (
             <Alert variant="primary">
               현재 존재하는 유저가 없습니다. 유저를 생성해주세요.
