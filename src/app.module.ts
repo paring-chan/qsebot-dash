@@ -1,11 +1,10 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common'
+import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { RenderModule } from 'nest-next'
 import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './users/users.module'
 import Next from 'next'
-import { AuthMiddleware } from './auth/auth.middleware'
 import { APP_GUARD } from '@nestjs/core'
 import { JwtGuard } from './auth/jwt.guard'
 
@@ -26,11 +25,4 @@ import { JwtGuard } from './auth/jwt.guard'
     },
   ],
 })
-export class AppModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(AuthMiddleware)
-      .exclude('auth/(.*)', '_next/(.*)')
-      .forRoutes('/')
-  }
-}
+export class AppModule {}
