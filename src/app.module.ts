@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './users/users.module'
 import Next from 'next'
 import { AuthMiddleware } from './auth/auth.middleware'
+import { APP_GUARD } from '@nestjs/core'
+import { JwtGuard } from './auth/jwt.guard'
 
 @Module({
   imports: [
@@ -16,7 +18,13 @@ import { AuthMiddleware } from './auth/auth.middleware'
     UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtGuard,
+    },
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
