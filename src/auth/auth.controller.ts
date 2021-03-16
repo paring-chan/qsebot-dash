@@ -13,10 +13,15 @@ import { AuthService } from './auth.service'
 import { User } from '../users/users.service'
 import knex from '@utils/knex'
 import { Public } from './jwt.guard'
+import { JwtService } from '@nestjs/jwt'
+import cookie from 'cookie'
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private jwtService: JwtService,
+  ) {}
 
   @Public()
   @Post('login')
@@ -29,10 +34,16 @@ export class AuthController {
   @Public()
   @Get('login')
   @Render('login/Index')
-  async loginRender() {
-    const userExists = !!(await knex('users').limit(1))[0]
-    return {
-      firstRun: !userExists,
+  async loginRender(@Req() req: Request, @Res() res: Response) {
+    try {
+      const cookies = cookie.parse(req.headers.cookie || '')
+      await this.jwtService.verifyAsync(cookies.token)
+    } catch {
+      const userExists = !!(await knex('users').limit(1))[0]
+      res.json({
+        firstRun: !userExists,
+      })
     }
+    res.redirect('/')
   }
 }
