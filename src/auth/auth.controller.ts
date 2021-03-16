@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Render,
-  Req,
-  Res,
-  UseGuards,
-} from '@nestjs/common'
+import { Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
 import { Request, Response } from 'express'
 import { AuthService } from './auth.service'
@@ -31,16 +23,21 @@ export class AuthController {
     res.redirect('/')
   }
 
+  @Get('logout')
+  async logout(@Res() res: Response) {
+    res.clearCookie('token')
+    res.redirect('/auth/login')
+  }
+
   @Public()
   @Get('login')
-  @Render('login/Index')
   async loginRender(@Req() req: Request, @Res() res: Response) {
     try {
       const cookies = cookie.parse(req.headers.cookie || '')
       await this.jwtService.verifyAsync(cookies.token)
     } catch {
       const userExists = !!(await knex('users').limit(1))[0]
-      res.json({
+      return res.render('login/Index', {
         firstRun: !userExists,
       })
     }
