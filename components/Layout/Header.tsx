@@ -15,7 +15,7 @@ const Header = ({ user }: any) => {
         <Nav className="d-flex">
           {user && (
             <NavDropdown id="nav_user_dropdown" title={user.id}>
-              <Dropdown.Item>로그아웃</Dropdown.Item>
+              <Dropdown.Item href="/auth/logout">로그아웃</Dropdown.Item>
             </NavDropdown>
           )}
         </Nav>
