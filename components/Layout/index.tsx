@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '@components/Layout/Header'
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ user: any }> = ({ children, user }) => {
   return (
     <div>
-      <Header />
+      <Header user={user} />
       {children}
     </div>
   )

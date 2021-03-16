@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, NavbarBrand } from 'react-bootstrap-v5'
 
-const Header = () => {
+const Header = ({ user }: any) => {
   return (
     <Navbar bg="primary" variant="dark" fixed="top">
       <div className="container-fluid">
