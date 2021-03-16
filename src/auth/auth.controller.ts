@@ -12,11 +12,13 @@ import { Request, Response } from 'express'
 import { AuthService } from './auth.service'
 import { User } from '../users/users.service'
 import knex from '@utils/knex'
+import { Public } from './jwt.guard'
 
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
+  @Public()
   @Post('login')
   @UseGuards(AuthGuard('local'))
   async login(@Res() res: Response, @Req() req: Request) {
@@ -24,6 +26,7 @@ export class AuthController {
     res.redirect('/')
   }
 
+  @Public()
   @Get('login')
   @Render('login/Index')
   async loginRender() {
