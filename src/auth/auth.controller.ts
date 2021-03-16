@@ -20,7 +20,8 @@ export class AuthController {
   @Post('login')
   @UseGuards(AuthGuard('local'))
   async login(@Res() res: Response, @Req() req: Request) {
-    res.cookie('token', this.authService.login(req.user as User))
+    res.cookie('token', await this.authService.login(req.user as User))
+    res.redirect('/')
   }
 
   @Get('login')
