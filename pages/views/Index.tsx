@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Index = () => {
   return (
     <PageContent>
-      <div>
+      <div className="col-12 col-md-6 col-lg-4 mx-auto">
         <ListGroup>
           <Link href="/quiz">
             <ListGroup.Item action>퀴즈 관리</ListGroup.Item>
