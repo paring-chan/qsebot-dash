@@ -19,15 +19,15 @@ const Password = () => {
       <form action="/password" method="post">
         <FormGroup controlId="currentPassword">
           <FormLabel>현재 비밀번호</FormLabel>
-          <FormControl type="password" name="currentPassword" />
+          <FormControl type="password" name="currentPassword" required />
         </FormGroup>
         <FormGroup controlId="newPassword">
           <FormLabel>새 비밀번호</FormLabel>
-          <FormControl type="password" name="currentPassword" />
+          <FormControl type="password" name="currentPassword" required />
         </FormGroup>
         <FormGroup controlId="newPasswordConfirm">
           <FormLabel>새 비밀번호 확인</FormLabel>
-          <FormControl type="password" name="currentPassword" />
+          <FormControl type="password" name="currentPassword" required />
         </FormGroup>
         <Button type="submit" style={{ width: '100%', marginTop: 10 }}>
           변경하기
