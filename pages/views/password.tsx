@@ -29,7 +29,9 @@ const Password = () => {
           <FormLabel>새 비밀번호 확인</FormLabel>
           <FormControl type="password" name="currentPassword" />
         </FormGroup>
-        <Button style={{ width: '100%', marginTop: 10 }}>변경하기</Button>
+        <Button type="submit" style={{ width: '100%', marginTop: 10 }}>
+          변경하기
+        </Button>
       </form>
     </PageContent>
   )
