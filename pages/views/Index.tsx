@@ -17,7 +17,7 @@ const Index = () => {
           <Link href="/accounts">
             <ListGroup.Item action>관리자 계정 관리</ListGroup.Item>
           </Link>
-          <Link href="/password">
+          <Link href="/views/password" as="/password">
             <ListGroup.Item action>비밀번호 변경</ListGroup.Item>
           </Link>
         </ListGroup>
