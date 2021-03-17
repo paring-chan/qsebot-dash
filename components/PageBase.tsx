@@ -14,9 +14,16 @@ const PageBase: React.FC<{
     <div>
       <h2>{title}</h2>
       <Breadcrumb>
-        {steps.map((r, i) => (
+        {[
+          {
+            name: '홈',
+            path: '/views/Index',
+            as: '/',
+          },
+          ...steps,
+        ].map((r, i) => (
           <Link href={r.path} as={r.as} key={i}>
-            <Breadcrumb.Item>{r.name}</Breadcrumb.Item>
+            <Breadcrumb.Item href={r.as}>{r.name}</Breadcrumb.Item>
           </Link>
         ))}
       </Breadcrumb>
