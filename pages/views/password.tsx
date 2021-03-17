@@ -1,7 +1,7 @@
 import React from 'react'
 import PageContent from '@components/PageContent'
 import PageBase from '@components/PageBase'
-import { FormControl, FormGroup, FormLabel } from 'react-bootstrap-v5'
+import { Button, FormControl, FormGroup, FormLabel } from 'react-bootstrap-v5'
 
 const Password = () => {
   return (
@@ -21,6 +21,15 @@ const Password = () => {
           <FormLabel>현재 비밀번호</FormLabel>
           <FormControl type="password" name="currentPassword" />
         </FormGroup>
+        <FormGroup controlId="newPassword">
+          <FormLabel>새 비밀번호</FormLabel>
+          <FormControl type="password" name="currentPassword" />
+        </FormGroup>
+        <FormGroup controlId="newPasswordConfirm">
+          <FormLabel>새 비밀번호 확인</FormLabel>
+          <FormControl type="password" name="currentPassword" />
+        </FormGroup>
+        <Button style={{ width: '100%', marginTop: 10 }}>변경하기</Button>
       </form>
     </PageContent>
   )
