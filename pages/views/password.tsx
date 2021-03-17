@@ -1,6 +1,7 @@
 import React from 'react'
 import PageContent from '@components/PageContent'
 import PageBase from '@components/PageBase'
+import { FormControl, FormGroup, FormLabel } from 'react-bootstrap-v5'
 
 const Password = () => {
   return (
@@ -15,6 +16,12 @@ const Password = () => {
           },
         ]}
       />
+      <form action="/password" method="post">
+        <FormGroup controlId="currentPassword">
+          <FormLabel>현재 비밀번호</FormLabel>
+          <FormControl type="password" name="currentPassword" />
+        </FormGroup>
+      </form>
     </PageContent>
   )
 }
