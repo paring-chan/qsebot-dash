@@ -36,9 +36,7 @@ const Accounts: React.FC<{ query: { users: any[] } }> = ({ query }) => {
 ;(Accounts as any).getInitialProps = (ctx: NextPageContext) => {
   const query = ctx.query
   return {
-    props: {
-      query,
-    },
+    query,
   }
 }
 
