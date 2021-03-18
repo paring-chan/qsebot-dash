@@ -1,5 +1,6 @@
 import React from 'react'
 import PageBase from '@components/PageBase'
+import PageContent from '@components/PageContent'
 
 const Accounts = () => {
   return (
@@ -13,7 +14,7 @@ const Accounts = () => {
         },
       ]}
     >
-      accounts
+      <PageContent>accounts</PageContent>
     </PageBase>
   )
 }
