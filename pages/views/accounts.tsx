@@ -3,9 +3,10 @@ import PageBase from '@components/PageBase'
 import PageContent from '@components/PageContent'
 import { Button, Table } from 'react-bootstrap-v5'
 import Link from 'next/link'
-import { NextPage } from 'next'
+import { NextPageContext } from 'next'
 
-const Accounts: NextPage = () => {
+const Accounts: React.FC<{ query: { users: any[] } }> = ({ query }) => {
+  console.log(query)
   return (
     <PageContent>
       <PageBase
@@ -30,6 +31,15 @@ const Accounts: NextPage = () => {
       </Table>
     </PageContent>
   )
+}
+
+Accounts.getInitialProps = (ctx: NextPageContext) => {
+  const query = ctx.query
+  return {
+    props: {
+      query,
+    },
+  }
 }
 
 export default Accounts
