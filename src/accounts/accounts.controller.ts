@@ -10,4 +10,10 @@ export class AccountsController {
       accounts: await knex('users').select('id'),
     }
   }
+
+  @Get('add')
+  @Render('addAccount')
+  addAccount() {
+    return {}
+  }
 }
