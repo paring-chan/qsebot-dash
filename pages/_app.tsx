@@ -9,7 +9,7 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   pageProps,
 }) => {
   return (
-    <Layout user={pageProps.user}>
+    <Layout user={pageProps.user} flash={pageProps.flash}>
       <Component {...pageProps} />
     </Layout>
   )

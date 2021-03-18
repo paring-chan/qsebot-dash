@@ -1,7 +1,10 @@
 import React from 'react'
 import Header from '@components/Layout/Header'
 
-const Layout: React.FC<{ user: any }> = ({ children, user }) => {
+const Layout: React.FC<{ user: any; flash?: string }> = ({
+  children,
+  user,
+}) => {
   return (
     <div>
       <style>
