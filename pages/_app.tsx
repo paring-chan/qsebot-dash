@@ -33,6 +33,11 @@ MyApp.getInitialProps = async ({
     if ((ctx.req as Request).user) {
       pageProps.user = (ctx.req as Request).user
     }
+  } else {
+    const user = await (await fetch('/api/user')).json()
+    if (user) {
+      pageProps.user = user
+    }
   }
 
   return { pageProps }
