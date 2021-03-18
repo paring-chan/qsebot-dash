@@ -23,11 +23,11 @@ const Password = () => {
         </FormGroup>
         <FormGroup controlId="newPassword">
           <FormLabel>새 비밀번호</FormLabel>
-          <FormControl type="password" name="currentPassword" required />
+          <FormControl type="password" name="newPassword" required />
         </FormGroup>
         <FormGroup controlId="newPasswordConfirm">
           <FormLabel>새 비밀번호 확인</FormLabel>
-          <FormControl type="password" name="currentPassword" required />
+          <FormControl type="password" name="newPasswordConfirm" required />
         </FormGroup>
         <Button type="submit" style={{ width: '100%', marginTop: 10 }}>
           변경하기

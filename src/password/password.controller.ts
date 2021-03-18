@@ -2,6 +2,7 @@ import { Controller, Get, Post, Render, Req, Res } from '@nestjs/common'
 import { Request, Response } from 'express'
 import { UsersService } from '../users/users.service'
 import bcrypt from 'bcrypt'
+import knex from '@utils/knex'
 
 @Controller('password')
 export class PasswordController {
@@ -28,6 +29,9 @@ export class PasswordController {
         flash: '새 비밀번호가 일치하지 않습니다.',
       })
     }
+    await knex('users').update({
+      password: await bcrypt.hash(newPassword, 10),
+    })
     res.render('Index', {
       flash: '비밀번호가 변경되었습니다.',
     })
