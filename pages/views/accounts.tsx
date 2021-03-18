@@ -3,8 +3,9 @@ import PageBase from '@components/PageBase'
 import PageContent from '@components/PageContent'
 import { Button, Table } from 'react-bootstrap-v5'
 import Link from 'next/link'
+import { NextPage } from 'next'
 
-const Accounts = () => {
+const Accounts: NextPage = () => {
   return (
     <PageContent>
       <PageBase
