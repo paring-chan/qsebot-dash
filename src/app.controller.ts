@@ -1,4 +1,5 @@
-import { Controller, Get, Render } from '@nestjs/common'
+import { Controller, Get, Render, Req } from '@nestjs/common'
+import { Request } from 'express'
 
 @Controller()
 export class AppController {
@@ -6,5 +7,10 @@ export class AppController {
   @Get()
   home() {
     return {}
+  }
+
+  @Get('api/user')
+  user(@Req() req: Request) {
+    return req.user || null
   }
 }
