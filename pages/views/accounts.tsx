@@ -1,7 +1,8 @@
 import React from 'react'
 import PageBase from '@components/PageBase'
 import PageContent from '@components/PageContent'
-import { Table } from 'react-bootstrap-v5'
+import { Button, Table } from 'react-bootstrap-v5'
+import Link from 'next/link'
 
 const Accounts = () => {
   return (
@@ -16,6 +17,9 @@ const Accounts = () => {
           },
         ]}
       />
+      <Link href="/views/addAccount" as="/accounts/add">
+        <Button>계정 추가</Button>
+      </Link>
       <Table>
         <thead>
           <tr>
