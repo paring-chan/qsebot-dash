@@ -1,6 +1,7 @@
 import React from 'react'
 import PageBase from '@components/PageBase'
 import PageContent from '@components/PageContent'
+import { Table } from 'react-bootstrap-v5'
 
 const Accounts = () => {
   return (
@@ -14,9 +15,14 @@ const Accounts = () => {
             as: '/accounts',
           },
         ]}
-      >
-        accounts
-      </PageBase>
+      />
+      <Table>
+        <thead>
+          <tr>
+            <th>ID</th>
+          </tr>
+        </thead>
+      </Table>
     </PageContent>
   )
 }
