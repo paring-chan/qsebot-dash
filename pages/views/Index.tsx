@@ -14,7 +14,7 @@ const Index = () => {
           <Link href="/auto_answer">
             <ListGroup.Item action>자동응답기(?) 관리</ListGroup.Item>
           </Link>
-          <Link href="/accounts">
+          <Link href="/views/accounts" as="/accounts">
             <ListGroup.Item action>관리자 계정 관리</ListGroup.Item>
           </Link>
           <Link href="/views/password" as="/password">
