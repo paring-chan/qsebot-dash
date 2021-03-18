@@ -8,6 +8,7 @@ import Next from 'next'
 import { APP_GUARD } from '@nestjs/core'
 import { JwtGuard } from './auth/jwt.guard'
 import { PasswordModule } from './password/password.module'
+import { AccountsModule } from './accounts/accounts.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { PasswordModule } from './password/password.module'
     AuthModule,
     UsersModule,
     PasswordModule,
+    AccountsModule,
   ],
   controllers: [AppController],
   providers: [
