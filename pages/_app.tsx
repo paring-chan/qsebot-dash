@@ -25,6 +25,10 @@ MyApp.getInitialProps = async ({
     pageProps = await Component.getInitialProps(ctx)
   }
 
+  if (ctx.query.flash) {
+    pageProps.flash = ctx.query.flash
+  }
+
   if (ctx.req) {
     if ((ctx.req as Request).user) {
       pageProps.user = (ctx.req as Request).user
