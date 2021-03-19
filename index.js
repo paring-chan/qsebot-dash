@@ -19,10 +19,15 @@ const run = async () => {
       {
         resource: models.problem,
       }
-    ]
+    ],
   })
 
-  const router = AdminBroExpress.buildRouter(adminBro)
+  const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
+    authenticate(email, password) {
+    },
+    cookieName: 'auth',
+    cookiePassword: require('crypto').randomBytes(128).toString()
+  })
 
   const app = require('express')()
 
