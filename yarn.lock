@@ -20,6 +20,15 @@
   resolved "https://registry.yarnpkg.com/@admin-bro/express/-/express-3.1.0.tgz#0b8eec245ffbe1111da50b11d8dc0585252244b0"
   integrity sha512-tPEopzGkmdIJuhg/oTokZ5iB1mXCwq1uaieIFIX1cETwuw+HDY+DoH5iS7KtIdxQYdNgf0ppjX+6eSeSYAZc0w==
 
+"@admin-bro/mongoose@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@admin-bro/mongoose/-/mongoose-1.1.0.tgz#c83c87bc587d4f46e860851de4c0a1f80a9e3c86"
+  integrity sha512-CMFfN12UV3VE3nZxvZMZK+deCqiU6hPvv6bDLuPzMV0KySPZLoEQe2rHuxgovEDn52bFXP0XPFMDHqW0FiNtfg==
+  dependencies:
+    escape-regexp "0.0.1"
+    flat "^4.1.0"
+    lodash "^4.17.11"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.8.3":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
@@ -1751,6 +1760,11 @@ escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
+
+escape-regexp@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/escape-regexp/-/escape-regexp-0.0.1.tgz#f44bda12d45bbdf9cb7f862ee7e4827b3dd32254"
+  integrity sha1-9EvaEtRbvfnLf4Yu5+SCez3TIlQ=
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
