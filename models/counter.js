@@ -7,7 +7,7 @@ module.exports = mongoose.model("counter", new mongoose.Schema({
     required: true
   },
   response: {
-    type: "boolean",
+    type: "string",
     required: true
   },
   count: {
