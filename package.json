@@ -8,6 +8,7 @@
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
     "@admin-bro/mongoose": "^1.1.0",
+    "@admin-bro/passwords": "^1.0.3",
     "admin-bro": "^3.4.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",

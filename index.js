@@ -4,6 +4,7 @@ const AdminBroExpress = require('@admin-bro/express')
 const mongoose = require("mongoose")
 const bcrypt = require('bcrypt')
 const gravatar = require('gravatar')
+const passwordFeature = require('@admin-bro/passwords')
 
 const models = require('./models')
 
@@ -20,6 +21,18 @@ const run = async () => {
     resources: [
       {
         resource: models.problem,
+      },
+      {
+        resource: models.admin,
+        options: {
+          properties: { encrypted: { isVisible: false } },
+        },
+        features: [passwordFeature({
+          properties: {
+            encryptedPassword: 'password'
+          },
+          hash: pw => bcrypt.hash(pw, 10),
+        })]
       }
     ],
   })
