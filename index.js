@@ -33,9 +33,6 @@ const run = async () => {
       },
       {
         resource: models.counter,
-        options: {
-          properties: { count: { isVisible: false } },
-        },
       }
     ],
   })
