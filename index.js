@@ -26,6 +26,12 @@ const run = async () => {
 
   const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     async authenticate(email, password) {
+      if (!(await models.admin.find()).length) {
+        const admin = new models.admin()
+        admin.email = email
+        admin.password = await bcrypt.hash(password, 10)
+        await admin.save()
+      }
       /**
        * @type {*}
        */
@@ -38,7 +44,7 @@ const run = async () => {
       }
       return {
         email: user.email,
-        avatarUrl: gravatar.profile_url(user.email)
+        avatarUrl: gravatar.url(user.email)
       }
     },
     cookieName: 'auth',
