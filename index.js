@@ -24,15 +24,18 @@ const run = async () => {
       },
       {
         resource: models.admin,
-        options: {
-          properties: { encrypted: { isVisible: false } },
-        },
         features: [passwordFeature({
           properties: {
             encryptedPassword: 'password'
           },
           hash: pw => bcrypt.hash(pw, 10),
         })]
+      },
+      {
+        resource: models.counter,
+        options: {
+          properties: { count: { isVisible: false } },
+        },
       }
     ],
   })
