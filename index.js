@@ -1,14 +1,25 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
+const mongoose = require("mongoose");
 
-const adminBro = new AdminBro({
-  databases: [],
-  rootPath: '/',
-})
+const AdminBroMongoose = require('@admin-bro/mongoose')
 
-const router = AdminBroExpress.buildRouter(adminBro)
+AdminBro.registerAdapter(AdminBroMongoose)
 
-const app = require('express')()
+const run = async () => {
+  const conn = await mongoose.connect(process.env.DB)
 
-app.use(adminBro.options.rootPath, router)
-app.listen(process.env.PORT)
+  const adminBro = new AdminBro({
+    databases: [conn],
+    rootPath: '/',
+  })
+
+  const router = AdminBroExpress.buildRouter(adminBro)
+
+  const app = require('express')()
+
+  app.use(adminBro.options.rootPath, router)
+  app.listen(process.env.PORT)
+}
+
+run()
