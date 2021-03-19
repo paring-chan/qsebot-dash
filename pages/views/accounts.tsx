@@ -5,8 +5,7 @@ import { Button, Table } from 'react-bootstrap-v5'
 import Link from 'next/link'
 import { NextPageContext } from 'next'
 
-const Accounts: React.FC<{ query: { users: any[] } }> = ({ query }) => {
-  console.log(query)
+const Accounts: React.FC<{ query: { accounts: any[] } }> = ({ query }) => {
   return (
     <PageContent>
       <PageBase
@@ -28,6 +27,13 @@ const Accounts: React.FC<{ query: { users: any[] } }> = ({ query }) => {
             <th>ID</th>
           </tr>
         </thead>
+        <tbody>
+          {query.accounts.map((r, i) => (
+            <tr key={i}>
+              <td>{r.id}</td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </PageContent>
   )
