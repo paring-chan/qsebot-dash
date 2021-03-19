@@ -1,6 +1,7 @@
+require('dotenv/config')
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
 const AdminBroMongoose = require('@admin-bro/mongoose')
 
