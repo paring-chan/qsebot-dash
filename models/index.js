@@ -1,1 +1,1 @@
-require('./problem')
+module.exports.problem = require('./problem')

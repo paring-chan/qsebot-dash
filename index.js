@@ -3,6 +3,8 @@ const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const mongoose = require("mongoose")
 
+const models = require('./models')
+
 const AdminBroMongoose = require('@admin-bro/mongoose')
 
 AdminBro.registerAdapter(AdminBroMongoose)
@@ -13,6 +15,11 @@ const run = async () => {
   const adminBro = new AdminBro({
     databases: [conn],
     rootPath: '/',
+    resources: [
+      {
+        resource: models.problem,
+      }
+    ]
   })
 
   const router = AdminBroExpress.buildRouter(adminBro)
