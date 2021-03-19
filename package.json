@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/pikokr/qsebot-dash.git",
   "author": "파랑이 <parangee9706@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "admin-bro": "^3.4.0",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0"
+  }
 }
