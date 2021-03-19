@@ -6,7 +6,7 @@ const app = express()
 
 const adminBro = new AdminBro({
   databases: [],
-  rootPath: '/admin',
+  rootPath: '/',
 })
 
 const router = AdminBroExpress.buildRouter(adminBro)
