@@ -2,6 +2,8 @@ require('dotenv/config')
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const mongoose = require("mongoose")
+const bcrypt = require('bcrypt')
+const gravatar = require('gravatar')
 
 const models = require('./models')
 
@@ -23,7 +25,21 @@ const run = async () => {
   })
 
   const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
-    authenticate(email, password) {
+    async authenticate(email, password) {
+      /**
+       * @type {*}
+       */
+      const user = await models.admin.findOne({
+        email,
+      })
+      if (!user) return null
+      if (!await bcrypt.compare(password, user.password)) {
+        return null
+      }
+      return {
+        email: user.email,
+        avatarUrl: gravatar.profile_url(user.email)
+      }
     },
     cookieName: 'auth',
     cookiePassword: require('crypto').randomBytes(128).toString()
