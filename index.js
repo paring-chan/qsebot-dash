@@ -1,9 +1,6 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 
-const express = require('express')
-const app = express()
-
 const adminBro = new AdminBro({
   databases: [],
   rootPath: '/',
