@@ -33,6 +33,9 @@ const run = async () => {
       },
       {
         resource: models.counter,
+      },
+      {
+        resource: models.newProblem,
       }
     ],
   })
